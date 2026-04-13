@@ -37,7 +37,7 @@ public class Chatapp_Registration {
         String result = login.registerUser(username, password,cellNumber);
         System.out.println("\n"+ result);
         
-        if (!login.checkUserName(username) || !login.checkPassword(password) || !login.checkCellPhoneNumber(cellNumber)){
+        if (!login.checkUserName(username) || !login.checkPasswordComplexity(password) || !login.checkCellPhoneNumber(cellNumber)){
         System.out.println("Registration failed. Please try again.");
         return;
     }

@@ -26,7 +26,7 @@ public class Chatapp_Login {
     }      
   }
   
-  boolean checkPassword(String password){
+  boolean checkPasswordComplexity(String password){
      if(password.length() <8){
          return false;
     }
@@ -79,18 +79,18 @@ public class Chatapp_Login {
         }else{
             usernameMessage = "Username is not correctly formatted; please ensure that your username contains an underscore and  is no more than five characters in length.";
         }
-        if(checkPassword(password)){
+        if(checkPasswordComplexity(password)){
             passwordMessage = "Password successfully captured.";
             this.password = password;
         }else{
-            passwordMessage = "Password is not correctly formatted; please ensure that the password contains at least 8 characters, a capital letter, a number, and a special character";
+            passwordMessage = "Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number, and a special character";
         }
         
         if (checkCellPhoneNumber(cellNumber)){
-            cellNumberMessage = "Cell phone number successfully added.";
+            cellNumberMessage = "Cell number successfully captured.";
             this.cellNumber = cellNumber;
         }else{
-            cellNumberMessage="Cell phone incorrectly formatted or does not contain international code.";
+            cellNumberMessage="Cell number incorrectly formatted or does not contain international code; please correct the number and try again.";
         }
         
         return usernameMessage + "\n" + passwordMessage + "\n" + cellNumberMessage;
