@@ -78,7 +78,7 @@ public class Chatapp_Login {
             usernameMessage = "Username successfully captured.";
             this.username = username;
         }else{
-            usernameMessage = "Username is not correctly formatted; please ensure that your username contains an underscore and  is no more than five characters in length.";
+            usernameMessage = "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length.";
         }
         if(checkPasswordComplexity(password)){
             passwordMessage = "Password successfully captured.";
