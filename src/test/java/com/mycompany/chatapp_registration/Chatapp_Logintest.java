@@ -59,13 +59,13 @@ public class Chatapp_Logintest {
     public void testCellNumberCorrect(){
         String result = login.registerUser("kyl_1", "Ch&&sec@ke99!", "+27697232430");
         
-        assertTrue(result.contains("Cell phone number successfully added."));
+        assertTrue(result.contains("Cell number successfully added."));
     }
     
     @Test
     public void testCellNumberIncorrect(){
         String result = login.registerUser("kyl_1", "Ch&&sec@ke99!", "0697232430");
-        assertTrue(result.contains("Cell phone number incorrectly formatted or does not contain international code."));
+        assertTrue(result.contains("Cell number is incorrectly formatted or does not contain an international code."));
     }
     
     @Test
