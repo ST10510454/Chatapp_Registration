@@ -20,8 +20,8 @@ public class Chatapp_Logintest {
     @Before
     public void setup(){
          login = new Chatapp_Login();
-         login.firstName = " ";
-         login.lastName = " ";
+         login.firstName = "Test";
+         login.lastName = "User";
     }
     
     
@@ -36,8 +36,8 @@ public class Chatapp_Logintest {
     public void testUsernameIncorrect(){
         String result = login.registerUser("kyle!!!!!!!!", "Ch&&sec@ke99!", "+27838968976");
         
-        assertTrue(result.contains("Username is not correctly formatted; please ensure that"
-                + "your username contains an underscore and is no more than five characters in length."));
+        assertTrue(result.contains("Username is not correctly formatted; please ensure that "
+                + " your username contains an underscore and is no more than five characters in length."));
     }
     
     @Test
@@ -52,7 +52,7 @@ public class Chatapp_Logintest {
         String result = login.registerUser("kyl_1", "password", "+27697232430");
         
         assertTrue(result.contains("Password is not correctly formatted; please ensure that"
-                + "the password contains at least 8 characters, a capital letter, a number, and a special character"));
+                + "the password contains at least eight characters, a capital letter, a number, and a special character"));
     }
     
     @Test
@@ -70,7 +70,7 @@ public class Chatapp_Logintest {
     
     @Test
     public void testLoginSuccess(){
-        login.registerUser("kyl__1", "Ch&&sec@ke99!", "+27697232430");
+        login.registerUser("kyl_1", "Ch&&sec@ke99!", "+27697232430");
         
         assertTrue(login.loginUser("kyl_1", "Ka&&zco@ig99!"));
     }

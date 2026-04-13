@@ -9,14 +9,14 @@ package com.mycompany.chatapp_registration;
  * @author Student
  */
 public class Chatapp_Login {
-    
+    //Variables
     String username;
     String password;
     String cellNumber;
     String firstName;
     String lastName;
     
-
+    //Methods
   boolean checkUserName(String username){
       
       if(username.length() <=5 && username.contains("_")){
