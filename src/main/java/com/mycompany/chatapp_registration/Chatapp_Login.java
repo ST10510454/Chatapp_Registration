@@ -6,7 +6,7 @@ package com.mycompany.chatapp_registration;
 
 /**
  *
- * @author Student
+ * @author Solomon Koketso Senoamadi
  */
 public class Chatapp_Login {
     //Variables
@@ -16,7 +16,7 @@ public class Chatapp_Login {
     String firstName;
     String lastName;
     
-    //Methods
+    //Method
   boolean checkUserName(String username){
       
       if(username.length() <=5 && username.contains("_")){
@@ -25,7 +25,7 @@ public class Chatapp_Login {
           return false;
     }      
   }
-  
+    //Method
   boolean checkPasswordComplexity(String password){
      if(password.length() <8){
          return false;
@@ -67,8 +67,9 @@ public class Chatapp_Login {
           return false;
       }
     }
-
+    
     String registerUser(String username, String password, String cellNumber){
+        //Variables
         String usernameMessage;
         String passwordMessage;
         String cellNumberMessage;
@@ -96,6 +97,7 @@ public class Chatapp_Login {
         return usernameMessage + "\n" + passwordMessage + "\n" + cellNumberMessage;
       
  }
+    //Method
     boolean loginUser(String username, String password){
         if ((this.username.equals(username) && this.password.equals(password))){
             return true;
@@ -103,6 +105,7 @@ public class Chatapp_Login {
             return false;
         }
     }
+    //Method
     public String returnLoginStatus(String username, String password){
         if (loginUser(username, password)){
             return "Welcome " + firstName + ", " + lastName + " it is great to see you.";

@@ -11,10 +11,10 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author koket
+ * @author Solomon Koketso Senoamadi
  */
 public class Chatapp_Logintest {
-    
+    //Login object
     Chatapp_Login login;
     
     @Before
@@ -54,7 +54,7 @@ public class Chatapp_Logintest {
         assertTrue(result.contains("Password is not correctly formatted; please ensure that"
                 + "the password contains at least eight characters, a capital letter, a number, and a special character"));
     }
-    
+    //assertTrue/assertFalse
     @Test
     public void testCellNumberCorrect(){
         String result = login.registerUser("kyl_1", "Ch&&sec@ke99!", "+27697232430");
