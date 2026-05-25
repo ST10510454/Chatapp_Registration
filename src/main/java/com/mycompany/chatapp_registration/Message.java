@@ -6,7 +6,8 @@ package com.mycompany.chatapp_registration;
 import java.util.Random;
 /**
  *
- * @author koket
+ * @author Solomon Koketso Senoamadi
+ * Part 2 - Message Test
  */
 public class Message {
     
