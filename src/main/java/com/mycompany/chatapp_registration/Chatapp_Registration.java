@@ -7,6 +7,7 @@ import java.util.Scanner;
 /**
  *
  * @author Solomon Koketso Senoamadi
+ * Added messaging menu for Part 2
  */
 public class Chatapp_Registration {
 
@@ -54,8 +55,77 @@ public class Chatapp_Registration {
         String loginPassword = input.nextLine();
         //Print the login result message
         System.out.println("\n" + login.returnLoginStatus(loginUsername, loginPassword));
+        if (!login.loginUser(loginUsername, loginPassword)){
+            System.out.println("Login failed. Existing.");
+            return;
+            
+        }
+        System.out.print("How many messages would you like to send? ");
+        int maxMessages = Integer.parseInt(input.nextLine());
         
-        //Scanner closes
+        int messagesEntered = 0;
+        boolean running = true;
+        
+        while(running){
+            System.out.println("\n--- Chatapp Menu ---");
+            System.out.println("1) Send Messages");
+            System.out.println("2) Show recently sent messages");
+            System.out.println("3) Quit");
+            System.out.println("Choose an option:");
+            
+            int menuChoice = Integer.parseInt(input.nextLine());
+            if (menuChoice == 1){
+                if (messagesEntered >= maxMessages){
+                    System.out.println("You have reached your message limit of " + maxMessages + ".");
+                }else{
+                    Message msg = new Message();
+                    msg.generateMessageID();
+                    System.out.println("Message ID generrated: " + msg.messageID);
+                    
+                    System.out.println("Enter recipient cell number(example: ++27825881182): ");
+                    String recipientCell = input.nextLine();
+                    System.out.println(msg.checkRecipientCell(recipientCell));
+                    
+                    if (!recipientCell.matches("^\\+[0-9]{11}$")){
+                        System.out.println("Message cancelled.");
+                    }else{
+                        System.out.println("Enter your message(max 250 characters): ");
+                        String messageText = input.nextLine();
+                        
+                        if (messageText.length()>250){
+                            int over = messageText.length()-250;
+                            System.out.println("Message exceeds 250 characters by "+ over + "; please reduce the size");
+                        }else{
+                            msg.messageText = messageText;
+                            System.out.println("Message Hash: " + msg.createMessageHash(messageText, messagesEntered));
+                            
+                            System.out.println("1) Send Message");
+                            System.out.println("2) Disregard Message");
+                            System.out.println("3) Store Message");
+                            System.out.println("Choose an option: ");
+                            
+                            int sendChoice = Integer.parseInt(input.nextLine());
+                            System.out.println(msg.sentMessage(sendChoice));
+                            
+                            if (sendChoice == 3){
+                                msg.storeMessage();
+                            }
+                            if (sendChoice == 1 || sendChoice == 3){
+                                System.out.println(msg.printMessages()     );
+                            }
+                            messagesEntered++;
+                        }
+                    }
+                }
+            }else if(menuChoice == 2){
+                System.out.println("Coming Soon.");
+            }else if(menuChoice == 3){
+                System.out.println("Total messages sent: " + Message.totalMessages);
+                System.out.println("Goodbye.");
+                running = false;
+            }
+        }
         input.close();
     }
 }
+
