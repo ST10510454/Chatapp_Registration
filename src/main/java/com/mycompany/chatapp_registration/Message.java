@@ -53,31 +53,31 @@ public class Message {
             return "Cell phone number is incorrectly formatted or does not contain an international code. Please correct the number and try again";
         }
     }
-    
+    // creates a unique hash for each message
     public String createMessageHash(String message, int messageNumber){
         
-        //
+        
         String firstTwo = messageID.substring(0,2);
         
-        //
+        
         String[]words = message.trim().split(" ");
         
-        //
+        
         String firstWord = words[0];
         
-        //
+        
         String lastWord = words[words.length-1];
         
-        //
+        
         lastWord = lastWord.replaceAll("[a-zA-Z0-9]", "");
         
-        //
+        
         messageHash = (firstTwo+lastWord).toUpperCase();
         return messageHash;
     }
     
     
-    //
+    //user chooses to send, stor or to disregard the message
     public String sentMessage(int choice){
         if(choice == 1){
             totalMessages++;
