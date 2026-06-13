@@ -163,6 +163,7 @@ public class Message {
             System.out.println("Error saving message: " + e.getMessage());
         }
     }
+    //Part 3 display methods added below
     //mrthod shows all the messages that were sent
     public static void displaySentMessages(){
         if(sentCount == 0){
