@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  *
  * @author koket
  * Part 3 - unit tests for array methods
- * All p\Part 3 tests passing
+ * All Part 3 tests passing
  */
 public class MessageDatatest {
     
