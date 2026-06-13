@@ -9,6 +9,7 @@ import java.util.Scanner;
  * @author Solomon Koketso Senoamadi
  * Added messaging menu for Part 2
  * Part 2 complete - registration, login and messaging
+ * Part 3 complete
  */
 public class Chatapp_Registration {
 
